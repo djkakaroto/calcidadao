@@ -8,7 +8,7 @@ imprimir_valor <- function( url_request ) {
   # Envia a URL para o site calculadora do cidadao
   # Tratamento do retorno (resposta)
   # read_html - package(rvest)
-  #library(rvest)
+  library(rvest)
   #print(URL_FULL)
   res <- xml2::read_html(url_request)
   td <- res %>% rvest::html_nodes("td")
@@ -18,8 +18,11 @@ imprimir_valor <- function( url_request ) {
   filter <-
     DescTools::StrTrim(fields[15:19], pattern = "%$ (REAL)")
   # Imprime os valores
+  val <- gsub("\\s", "", filter[5])
   # cat(filter[1], filter[3], filter[5])
-  return (paste("R$ ", filter[5], sep = ""))
+  #return (paste("R$ ", val, sep = ""))
+  
+  return (val)
   #print(fields)
 
 

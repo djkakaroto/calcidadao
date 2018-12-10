@@ -54,7 +54,7 @@ corrigir_valor <-
       } else if (pracma::strcmp("IGP-M", metodo)) {
         urlBase = retornaURL(metodo)
         dtInicial <- validar_data_indices(dtInicial)
-        dtFinal <- validar_data_indices(dtFinal, nMes = -2)
+        dtFinal <- validar_data_indices(dtFinal, nMes = -1)
         URL_FULL = paste(
           urlBase,
           "&dataInicial=",
