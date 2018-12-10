@@ -12,7 +12,7 @@ converte_valor <- function( value = TRUE ){
   # # Substitui o . por ,
   value = gsub("\\,", "\\.", value)
   value = as.double(value)
-  print(value)
+  #print(value)
 
   # # ------------------------------------------- #
   # # Validation of the value variable is numeric #
@@ -20,9 +20,9 @@ converte_valor <- function( value = TRUE ){
     print("Error: value variable can not character, type value is numeric!")
   } else if (is.double(value) ||
              is.integer(value) || is.numeric(value)) {
-    if (value > 0.0) {
+    if (value >= 0.0) {
       valor = gsub("\\.", "\\,", value)
-      print(valor)
+      #print(valor)
     } else{
       print("Error: value can not negative!")
     }
